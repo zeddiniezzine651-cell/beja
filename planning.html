@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة التخطيط العمراني - باجة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* خلفية جمالية تعبر عن التخطيط */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Aref Ruqaa', serif;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.6);
+        }
+
+        .options-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: white;
+            padding: 30px 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            font-size: 24px;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card-link:hover {
+            background: white;
+            color: #2c3e50;
+            transform: translateY(-10px);
+            border-color: white;
+        }
+
+        .back-home {
+            margin-top: 60px;
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-bottom: 1px dashed white;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>استكشاف التخطيط العمراني بباجة</h1>
+
+    <div class="options-container">
+        <a href="map_qgis/index.html" class="card-link">
+            🔍 مثال التهيئة العمرانية (QGIS)
+        </a>
+
+        <a href="https://fr-lu.topographic-map.com/map-pjgvgt/Gouvernorat-B%C3%A9ja/?center=36.92166%2C9.42146&zoom=10"
+           class="card-link" target="_blank">
+            ⛰️ الخريطة الطبوغرافية الرقمية
+        </a>
+    </div>
+
+ <a href="index.html.html" style="color: white; text-decoration: none; font-family: 'Aref Ruqaa', serif; cursor: pointer;">
+    ← العودة إلى البوابة الرئيسية
+</a> 
+
+</body>
+</html> 

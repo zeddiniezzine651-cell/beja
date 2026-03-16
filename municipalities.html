@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>إدارة بلديات باجة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1590073242685-c458c3230877?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; font-family: 'Aref Ruqaa', serif; color: white;
+        }
+        .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .muni-card {
+            width: 280px; padding: 30px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3); border-radius: 20px; text-decoration: none;
+            color: white; text-align: center; font-size: 22px; transition: 0.3s;
+        }
+        .muni-card:hover { background: white; color: black; transform: translateY(-5px); }
+        .back-link { margin-top: 40px; color: #ccc; text-decoration: none; border-bottom: 1px dashed white; }
+    </style>
+</head>
+<body>
+    <h1>اختر الإدارة أو المبنى المطلوب</h1>
+   <div class="options-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px;">
+    <div class="muni-card" onclick="location.href='qasr_baladiya.html'" style="cursor: pointer; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid white; color: white;">
+        قصر البلدية
+    </div>
+
+    <div class="muni-card" onclick="location.href='bab_sabâa.html'" style="cursor: pointer; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid white; color: white;">
+        بلدية باب السبعة
+    </div>
+
+    <div class="muni-card" onclick="location.href='tech_admin.html'" style="cursor: pointer; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid white; color: white;">
+        الإدارة الفنية
+    </div>
+
+    <div class="muni-card" onclick="location.href='ideal_admin.html'" style="cursor: pointer; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid white; color: white;">
+        الإدارة المالية
+    </div>
+</div> 
+  
+</a> 
+<div style="text-align: center; margin-top: 50px;">
+    <a href="index.html.html" style="color: white; text-decoration: none; font-family: 'Aref Ruqaa', serif; font-size: 1.5rem; border: 1px solid rgba(255,255,255,0.5); padding: 10px 25px; border-radius: 50px; background: rgba(255,255,255,0.1); display: inline-block; cursor: pointer;">
+        العودة للبوابة الرئيسية ←
+    </a>
+</div> 
+</div> 
+</body>
+</html> 

@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة باجة المدينة الذكية </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            /* وضع الصورة كخلفية ثابتة لكامل الصفحة */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                        url('https://i.ibb.co/nNWpCqKQ/beja.jpg')no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* هذا السر لجعلها خلفية ثابتة خلف كل شيء */
+            color: white;
+        }
+
+        .header-top {
+            
+                background: transparent; /* هذا سيجعل الخلفية البيضاء تختفي تماماً */
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; /* يجعل الهيدر يغطي صورة الجامع */
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+        }
+
+        
+/* الكود الموجود عندك حالياً */
+.hero {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ضع الكود الثاني هنا بالضبط ليعطيك شكل الخط الأصيل */
+h1
+   /* هذا السطر سيغير الخط لكل نصوص الموقع */
+body {
+    font-family: 'Aref Ruqaa', serif;
+}
+
+/* لتكبير العنوان الرئيسي وإعطائه هيبة أكبر */
+h1 {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.9);
+}
+
+/* لتغيير خط "معلومات جغرافية رقمية" والمحاور الأساسية */
+.hero p, .section-title, .icon-box h3 {
+    font-family: 'Aref Ruqaa', serif;
+    font-weight: 400;
+} 
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 40px 10%;
+        }
+
+        .icon-box {
+            /* صناديق شفافة بتأثير الزجاج (Glassmorphism) */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .icon-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .icon-box i { font-size: 2.5rem; color: #fff; margin-bottom: 15px; }
+        .icon-box h3 { font-size: 1.1rem; color: #fff; }
+       
+        .section-title { text-align: center; padding: 20px; color: white; font-size: 2.2rem; }
+       
+        #map {
+            height: 450px;
+            width: 90%;
+            margin: 20px auto 50px;
+            border-radius: 20px;
+            border: 5px solid rgba(255,255,255,0.2);
+        }
+        .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-container img {
+    height: 90px;
+    width: auto;
+}
+.logo-text {
+    font-family: 'Aref Ruqaa', serif; /* التأكد من استخدام نفس خط البوابة */
+    font-weight: bold;
+    color: #fff; /* تغيير اللون إلى الأبيض الصافي */
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف لبروز النص فوق الصورة */
+} 
+
+ 
+    </style> 
+</head>
+
+<body>
+    <div class="header-top">
+    <div class="logo-container">
+        <img src="logo.png.png" alt="شعار بلدية باجة">
+        <span class="logo-text">بلدية باجة</span>
+    </div>
+</div> 
+
+    <div class="hero">
+        <h1>بوابة باجة المدينة الذكية </h1>
+        <p>معلومات جغرافية رقمية في خدمة المواطن والتنمية</p>
+     
+    </div>
+
+    <h2 class="section-title">المحاور الأساسية</h2>
+   
+    <div class="services-grid">
+        <div class="icon-box" onclick="updateMap('municipality')">
+           <i class="fa-solid fa-landmark" style="font-size: 40px; color: #d2b48c;"></i>
+            <h3>البلديات</h3>
+        </div>
+        <div class="icon-box" onclick="location.href='transport.html'" style="cursor: pointer;">
+   <i class="fa-solid fa-bus" style="font-size: 40px; color: #3498db;"></i>
+    <h3 style="font-family: 'Aref Ruqaa', serif; color: white; margin-top: 10px;">خط النقل</h3>
+</div>
+     <div class="icon-box" onclick="location.href='planning.html'" style="cursor: pointer;">
+    <i class="fa-solid fa-map-location-dot" style="font-size: 40px; color: #e67e22;"></i>
+    <h3 style="font-family: 'Aref Ruqaa', serif;">التخطيط العمراني</h3>
+</div> 
+        <div class="icon-box" onclick="updateMap('lighting')">
+    <i class="fa-solid fa-lightbulb" style="font-size: 40px; color: #f1c40f;"></i>
+    <h3>التنوير العمومي</h3>
+</div> 
+     
+        <div class="icon-box" onclick="location.href='environment.html'">
+    <i class="fa-solid fa-leaf" style="font-size: 40px; color: #2ecc71;"></i>
+    <h3 style="font-family: 'Aref Ruqaa', serif;">النظافة والبيئة</h3>
+</div> 
+
+<div class="icon-box" onclick="location.href='green_spaces.html'">
+    <i class="fa-solid fa-tree" style="font-size: 40px; color: #27ae60;"></i>
+    <h3 style="font-family: 'Aref Ruqaa', serif;">المناطق الخضراء</h3>
+</div> 
+<div class="icon-box" onclick="updateMap('parking')">
+    <i class="fas fa-parking" style="font-size: 40px; color: #1abc9c !important;"></i>
+    <h3 style="font-family: 'Aref Ruqaa', serif;">مواقف السيارات </h3>
+</div>  
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([36.723611, 9.183333], 14);
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
+
+        const data = {
+           
+            transport: { coords: [36.728, 9.189], text: "محطة الحافلات" },
+            parking: { coords: [36.723611, 9.183333], text: "موقف سيدي عبد العاطي" }
+        };
+
+        let marker;
+       function updateMap(type) {
+    // إذا كان النوع هو بلدية، قم بالانتقال للصفحة الجديدة مباشرة
+    if (type === 'municipality') {
+        window.location.href = 'municipalities.html';
+        return; // توقف هنا ولا تنفذ أوامر الخريطة
+    }
+
+    // الأكواد القديمة للخريطة لبقية الأزرار (النقل والمواقف)
+    if(marker) map.removeLayer(marker);
+    if(data[type]) {
+        marker = L.marker(data[type].coords).addTo(map).bindPopup(data[type].text).openPopup();
+        map.flyTo(data[type].coords, 16);
+    } else {
+        alert("سيتم إضافة بيانات هذا القسم قريباً");
+    }
+} 
+    </script>
+</body>
+</html> 
